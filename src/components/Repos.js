@@ -11,7 +11,7 @@ class Repos extends Component {
     let self = this;
     fetch(
       `https://api.github.com/users/${this.props.params
-        .username}/repos?sort=updated`
+        .username}/repos?sort=updated&access_token=edab28eefc5fd57b60eccd05c6cfbe7bdead89a8`
     )
       .then(resp => resp.json())
       .then(repos => {
@@ -32,7 +32,7 @@ class Repos extends Component {
     return (
       <div className="followers-page">
         <h3>
-          {this.props.params.username}'s repos
+          {this.props.params.username}s repos
         </h3>
         <ul className="followers-list">
           {this.state.repos.map(function(repo) {
